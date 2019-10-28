@@ -1,0 +1,281 @@
+﻿@using WebApplication.abbas_lkb
+@model List<WebApplication.abbas_lkb.TblCar>
+
+@{
+    ViewBag.Title = "روابط آیتم ها و ماشین ها";
+    Layout = "_Layout";
+}
+
+<style>
+  .bat{
+    border: 1px #1b6d85 solid;
+    padding: 1px;
+    margin: 2px;
+    }
+    
+    .bat:hover{
+      background-color: #c97fce;
+      }
+      
+      .x{
+         border: 1px #1b6d85 solid;
+ 
+      }
+</style>
+
+
+<table class="table table-bordered">
+    @*<thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">نام ماشین</th>
+      <th scope="col">انتخاب</th>
+      <th scope="col">انتخاب شده</th>
+    </tr>
+  </thead>*@
+    <tbody>
+    @{
+        List<TblCategory> cats = ViewBag.cats;
+        var count = cats.Count / 10 + 1;
+        if (cats.Count == 10)
+        {
+            count = 1;
+        }
+    }
+    @for (int i = 0; i < count; i++)
+    {
+        <tr>
+            @for (int j = i * 10; j < i * 10 + 10; j++)
+            {
+                if (j >= cats.Count)
+                {
+                    break;
+                }
+                var m = cats[j];
+                <td >
+                    @if (ViewBag.catId ==m.Id)
+                    {
+                        <a class="btn btn-info" href="@Url.Action("Index", new {catId = m.Id})">@m.Name</a>
+                    }
+                    else
+                    {
+                        <a class="btn btn-primary" href="@Url.Action("Index", new {catId = m.Id})">@m.Name</a>
+                    }
+                </td>
+            }
+        </tr>
+    }
+
+
+    </tbody>
+</table>
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">نام ماشین</th>
+        <th scope="col">انتخاب</th>
+        <th scope="col">انتخاب شده</th>
+    </tr>
+    </thead>
+    <tbody>
+    @{
+    }
+    @foreach (var m in Model)
+    {
+        <tr>
+            <th scope="row" id="car_in_page_@m.Id">
+                @m.Id
+            </th>
+            <td>@m.Name (@m.Cat.Name)</td>
+            <td>
+
+                <button onclick="onModalOpen('.b_@m.Id','@m.Id')"
+
+                        class="btn btn-info" data-toggle="modal" data-target="#myModal">
+                    +
+                </button>
+
+
+            </td>
+            <td style="display: flex">
+                @foreach (var bat in m.TblItemCar)
+                {
+                    if (bat.Item.CatId == ViewBag.catId)
+                    {
+                        <span class="bat ">
+
+                            <input class="b_@m.Id" type="hidden" value="@bat.ItemId"/>
+
+
+                            @bat.Item.Name <a style="cursor: pointer" onclick="removeItem(this,'@bat.CarId','@bat.ItemId')" class="x">x</a>
+                        </span>
+                    }
+                }
+
+            </td>
+        </tr>
+    }
+
+    </tbody>
+</table>
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade " role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+
+                <div >
+                    <div class="row">
+                        @using (Html.BeginForm("addItem", "BatteryToCars"
+                            , FormMethod.Post))
+                        {
+                            <input name="CarId" id="CarId" type="hidden"/>
+                            <input name="ItemCategoryTypeId" id="ItemCategoryTypeId" type="hidden" value="@ViewBag.catId"/>
+                            <input name="backToCarItemUrl" id="backToCarItemUrl"
+                                   type="hidden" value=""/>
+
+                            List<TblItem> bats = ViewBag.bats;
+                            foreach (var item in bats)
+                            {
+                                <div class="col-md-3 item_to_select item_to_select_@item.Id">
+                                    <button type="button" class=" item_to_select_button btn btn-info " onclick="selectBat(this)">@item.Name</button>
+                                    <input class="item " name="Items[]" type="text" value="@item.Id" disabled="disabled"
+                                           readonly="readonly" style="display: none"/>
+                                </div>
+                            }
+
+                            <input type="submit"/>
+                        }
+
+                    </div>
+                </div>
+
+
+                @*
+                  @using (Html.BeginForm("addItem","BatteryToCars"))
+                                {
+                                    <select name="itemId">
+                                        @{
+                                            List<TblItem> bats = ViewBag.bats;
+                                        }
+                
+                                        @foreach (var item in bats)
+                                        {
+                                            <option value="@item.Id">@item.Name </option>
+                                        }
+                
+                                    </select>
+                                }
+                                *@
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+
+function onModalOpen(selector,carid) {
+    $('#CarId').val(carid);
+    $('#backToCarItemUrl').val('#car_in_page_'+carid);
+    
+    
+    
+          $('.item_to_select').show();
+          var buttons= $('.item_to_select_button');
+        buttons .removeClass('btn-success');
+          buttons.addClass('btn-info');
+  
+    $(selector).each(function(){// id of ul
+      var val = $(this).val();
+      
+      console.log('.item_to_select_'+val);
+    
+        $('.item_to_select_'+val).hide();
+    
+    })
+}
+
+function selectBat(el) {
+  if($(el).next().attr('disabled')){
+          {
+   $(el).removeClass('btn-info');
+              $(el).addClass('btn-success');
+              $(el).next().removeAttr('disabled');
+          }
+    }else{
+  $(el).removeClass('btn-success');
+                      $(el).addClass('btn-info');
+                $(el).next().attr('disabled','disabled');
+    }
+}
+
+function removeItem(el,carid,itemid) {
+  
+    
+    $.ajax({
+    url:'/BatteryToCars/removeItem',
+    data:{carId :carid,itemId:itemid},
+    method:'post',
+    fail:function(e) {
+      
+         console.error('fail',e);
+ },
+    error:function(e) {
+       console.error('error',e);
+    },
+    success:function(s) {
+      console.log('success');
+         $(el).parent().hide();
+  }
+    })
+    
+    
+}
+</script>
+
+@section scripts{
+    <script>
+
+$(document).ready(function() {
+  $("@TempData["backToCarItemUrl"]").parent().css("backgroundColor","#9fff00");
+   
+@if (TempData["backToCarItemUrl"] != null)
+    {
+   
+    <text>
+         window.scrollTo(0,$("@TempData["backToCarItemUrl"]").offset().top-150);
+         
+      /*   $("TempData["backToCarItemUrl"]").parent().parent().animate({
+                        backgroundColor    : "white"
+                    }, 3000);*/
+         /*
+           $("TempData["backToCarItemUrl"]").animate({backgroundColor: "white"},1000);
+           $("TempData["backToCarItemUrl"]").parent().animate({backgroundColor: "white"},1000);
+           $("TempData["backToCarItemUrl"]").parent().parent().animate({backgroundColor: "white"},1000);
+*/
+       </text>
+
+}
+
+})
+       </script>
+
+
+}
+
+

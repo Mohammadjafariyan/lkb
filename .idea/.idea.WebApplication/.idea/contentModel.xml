@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\jafariyan\lkbcore\WebApplication" t="IncludeFlat">
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="WebApplication" t="IncludeRecursive">
+        <e p="2.1.11" t="Include" />
+        <e p="abbas_lkb" t="Include">
+          <e p="abbas_lkbContext.cs" t="Include" />
+          <e p="TblCar.cs" t="Include" />
+          <e p="TblCarCategory.cs" t="Include" />
+          <e p="TblCategory.cs" t="Include" />
+          <e p="TblCategoryFeatures.cs" t="Include" />
+          <e p="TblCategoryFeatureType.cs" t="Include" />
+          <e p="TblConfigs.cs" t="Include" />
+          <e p="TblCustomer.cs" t="Include" />
+          <e p="TblCustomerAddress.cs" t="Include" />
+          <e p="TblCustomerGcm.cs" t="Include" />
+          <e p="TblCustomerPoint.cs" t="Include" />
+          <e p="TblDepot.cs" t="Include" />
+          <e p="TblDiscount.cs" t="Include" />
+          <e p="TblDiscountType.cs" t="Include" />
+          <e p="TblInstallPrice.cs" t="Include" />
+          <e p="TblItem.cs" t="Include" />
+          <e p="TblItemCar.cs" t="Include" />
+          <e p="TblItemFeature.cs" t="Include" />
+          <e p="TblItemPics.cs" t="Include" />
+          <e p="TblItemStockLog.cs" t="Include" />
+          <e p="TblNotifyMe.cs" t="Include" />
+          <e p="TblOrder.cs" t="Include" />
+          <e p="TblOrderItems.cs" t="Include" />
+          <e p="TblOrderPay.cs" t="Include" />
+          <e p="TblOrderRate.cs" t="Include" />
+          <e p="TblOrderStatus.cs" t="Include" />
+          <e p="TblSection.cs" t="Include" />
+          <e p="TblSectionItems.cs" t="Include" />
+          <e p="TblService.cs" t="Include" />
+          <e p="TblServiceCar.cs" t="Include" />
+          <e p="TblServiceCategory.cs" t="Include" />
+          <e p="TblServiceman.cs" t="Include" />
+          <e p="TblServicemanTrack.cs" t="Include" />
+          <e p="TblSlider.cs" t="Include" />
+          <e p="TblSliderType.cs" t="Include" />
+          <e p="TblTicket.cs" t="Include" />
+          <e p="TblTicketMsg.cs" t="Include" />
+          <e p="TblTimes.cs" t="Include" />
+          <e p="TblUpdate.cs" t="Include" />
+          <e p="Users.cs" t="Include" />
+        </e>
+        <e p="app.db" t="Include" />
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="Areas" t="Include">
+          <e p="Identity" t="Include">
+            <e p="Pages" t="Include">
+              <e p="_ViewStart.cshtml" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="aspnet-codegenerator" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="cd" t="Include" />
+        <e p="Controllers" t="Include">
+          <e p="BatteryToCarsController.cs" t="Include" />
+          <e p="HomeController.cs" t="Include" />
+          <e p="VacationRequestController.cs" t="Include" />
+        </e>
+        <e p="Data" t="Include">
+          <e p="ApplicationDbContext.cs" t="Include" />
+          <e p="Migrations" t="Include">
+            <e p="00000000000000_CreateIdentitySchema.cs" t="Include" />
+            <e p="00000000000000_CreateIdentitySchema.Designer.cs" t="Include" />
+            <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
+          </e>
+        </e>
+        <e p="dotnet" t="Include" />
+        <e p="LKB" t="Include">
+          <e p="lkbContext.cs" t="Include" />
+          <e p="Members.cs" t="Include" />
+          <e p="Morakhasi.cs" t="Include" />
+        </e>
+        <e p="Models" t="Include">
+          <e p="ErrorViewModel.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.1" t="Include">
+              <e p="UserSecretsAssemblyInfo.cs" t="Include" />
+              <e p="WebApplication.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Pages" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+        <e p="Views" t="Include">
+          <e p="_ViewImports.cshtml" t="Include" />
+          <e p="_ViewStart.cshtml" t="Include" />
+          <e p="BatteryToCars" t="Include">
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="Home" t="Include">
+            <e p="About.cshtml" t="Include" />
+            <e p="Contact.cshtml" t="Include" />
+            <e p="Index.cshtml" t="Include" />
+            <e p="Privacy.cshtml" t="Include" />
+          </e>
+          <e p="Shared" t="Include">
+            <e p="_CookieConsentPartial.cshtml" t="Include" />
+            <e p="_Layout.cshtml" t="Include" />
+            <e p="_LoginPartial.cshtml" t="Include" />
+            <e p="_ValidationScriptsPartial.cshtml" t="Include" />
+            <e p="Error.cshtml" t="Include" />
+          </e>
+          <e p="VacationRequest" t="Include">
+            <e p="Create.cshtml" t="Include" />
+            <e p="Edit.cshtml" t="Include" />
+          </e>
+        </e>
+        <e p="WebApplication.csproj" t="IncludeRecursive" />
+        <e p="wwwroot" t="Include">
+          <e p="css" t="Include">
+            <e p="site.css" t="Include" />
+            <e p="site.min.css" t="Include" />
+          </e>
+          <e p="favicon.ico" t="Include" />
+          <e p="images" t="Include">
+            <e p="banner1.svg" t="Include" />
+            <e p="banner2.svg" t="Include" />
+            <e p="banner3.svg" t="Include" />
+          </e>
+          <e p="js" t="Include">
+            <e p="site.js" t="Include" />
+            <e p="site.min.js" t="Include" />
+          </e>
+          <e p="lib" t="Include">
+            <e p="bootstrap" t="Include">
+              <e p=".bower.json" t="Include" />
+              <e p="dist" t="Include">
+                <e p="css" t="Include">
+                  <e p="bootstrap-theme.css" t="Include" />
+                  <e p="bootstrap-theme.css.map" t="Include" />
+                  <e p="bootstrap-theme.min.css" t="Include" />
+                  <e p="bootstrap-theme.min.css.map" t="Include" />
+                  <e p="bootstrap.css" t="Include" />
+                  <e p="bootstrap.css.map" t="Include" />
+                  <e p="bootstrap.min.css" t="Include" />
+                  <e p="bootstrap.min.css.map" t="Include" />
+                </e>
+                <e p="fonts" t="Include">
+                  <e p="glyphicons-halflings-regular.eot" t="Include" />
+                  <e p="glyphicons-halflings-regular.svg" t="Include" />
+                  <e p="glyphicons-halflings-regular.ttf" t="Include" />
+                  <e p="glyphicons-halflings-regular.woff" t="Include" />
+                  <e p="glyphicons-halflings-regular.woff2" t="Include" />
+                </e>
+                <e p="js" t="Include">
+                  <e p="bootstrap.js" t="Include" />
+                  <e p="bootstrap.min.js" t="Include" />
+                  <e p="npm.js" t="Include" />
+                </e>
+              </e>
+              <e p="LICENSE" t="Include" />
+            </e>
+            <e p="jquery" t="Include">
+              <e p=".bower.json" t="Include" />
+              <e p="dist" t="Include">
+                <e p="jquery.js" t="Include" />
+                <e p="jquery.min.js" t="Include" />
+                <e p="jquery.min.map" t="Include" />
+              </e>
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+            <e p="jquery-validation" t="Include">
+              <e p=".bower.json" t="Include" />
+              <e p="dist" t="Include">
+                <e p="additional-methods.js" t="Include" />
+                <e p="additional-methods.min.js" t="Include" />
+                <e p="jquery.validate.js" t="Include" />
+                <e p="jquery.validate.min.js" t="Include" />
+              </e>
+              <e p="LICENSE.md" t="Include" />
+            </e>
+            <e p="jquery-validation-unobtrusive" t="Include">
+              <e p=".bower.json" t="Include" />
+              <e p="jquery.validate.unobtrusive.js" t="Include" />
+              <e p="jquery.validate.unobtrusive.min.js" t="Include" />
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="WebApplication.sln" t="IncludeFlat" />
+    </e>
+    <e p="C:\Users\Rezvan\.Rider2019.2\config\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\Rezvan\.Rider2019.2\config\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\Rezvan\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Rezvan\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_WebApplication.-204736744.00" t="ExcludeRecursive" />
+  </component>
+</project>
